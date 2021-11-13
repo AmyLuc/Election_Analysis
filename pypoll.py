@@ -62,6 +62,7 @@ with open(file_to_save, "w") as txt_file:
     print(election_results, end="")
        
     # Save the final vote count to the text file.
+    print(election_results)
     txt_file.write(election_results)
 
     #Make a list of unique counties.
@@ -75,6 +76,7 @@ with open(file_to_save, "w") as txt_file:
         county_results = (f"{county_name}: {turnout_percentage:.1f}% ({turnout:,})\n")
         #Write results to a text file.
         txt_file.write(county_results)
+        print(county_results)
 
         #Find and print county with largest voter turnout. State the numbers and percentages.
         if (turnout > highest_turnout) and (turnout_percentage > largest_percentage):
@@ -88,6 +90,7 @@ with open(file_to_save, "w") as txt_file:
         f"{populous}'s contribution to total voter turnout: {largest_percentage:.1f}%\n"
         f"-------------------------\n")
     txt_file.write(turnout_summary)
+    print(turnout_summary)
 
     #The code bellow does the same thing as the code above, just with the data from the candidates row,
     #instead of the counties row.
@@ -98,6 +101,7 @@ with open(file_to_save, "w") as txt_file:
 
         candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
         txt_file.write(candidate_results)
+        print(candidate_results)
 
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
@@ -110,6 +114,7 @@ with open(file_to_save, "w") as txt_file:
         f"Winning Percentage: {winning_percentage:.1f}%\n"
         f"-------------------------\n")
     txt_file.write(winning_candidate_summary)
+    print(winning_candidate_summary)
                
 
 print(candidate_options)
