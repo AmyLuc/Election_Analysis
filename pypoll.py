@@ -62,7 +62,6 @@ with open(file_to_save, "w") as txt_file:
     print(election_results, end="")
        
     # Save the final vote count to the text file.
-    print(election_results)
     txt_file.write(election_results)
 
     #Make a list of unique counties.
@@ -101,7 +100,6 @@ with open(file_to_save, "w") as txt_file:
 
         candidate_results = (f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
         txt_file.write(candidate_results)
-        print(candidate_results)
 
         if (votes > winning_count) and (vote_percentage > winning_percentage):
             winning_count = votes
@@ -120,4 +118,5 @@ with open(file_to_save, "w") as txt_file:
 print(candidate_options)
 print(candidate_votes)
 #Ta da!
+
 
